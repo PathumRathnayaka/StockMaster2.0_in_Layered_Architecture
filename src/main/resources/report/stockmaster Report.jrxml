@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stockmaster Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2c37047-164b-4823-9899-b1c79e3e5399">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Report"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM marketplace]]>
+	</queryString>
+	<field name="marketplaceId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="marketplaceId"/>
+		<property name="com.jaspersoft.studio.field.label" value="marketplaceId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marketplace"/>
+	</field>
+	<field name="marketName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="marketName"/>
+		<property name="com.jaspersoft.studio.field.label" value="marketName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marketplace"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marketplace"/>
+	</field>
+	<field name="hotline" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="hotline"/>
+		<property name="com.jaspersoft.studio.field.label" value="hotline"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marketplace"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marketplace"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="204" y="7" width="180" height="50" uuid="da7a2244-12d9-4cfd-8f35-dbcbbb7367e1"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock Master]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="206" y="10" width="144" height="30" uuid="9fdb389e-b941-49c9-8507-7d0cd2a93380"/>
+				<textElement>
+					<font size="22" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Marcet Place]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="100" height="15" uuid="e9f8ff0d-3e40-4aee-b12d-ab65e81f8c74">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef776da5-c41b-4eeb-94e8-32678ff20470"/>
+				</reportElement>
+				<text><![CDATA[marketplaceId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="15" width="100" height="15" uuid="71e15106-5dee-44e8-863d-8e15b35aa4b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f832108-3054-4ef4-9763-79ae1574a456"/>
+				</reportElement>
+				<text><![CDATA[marketName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="15" width="100" height="15" uuid="06deaf27-031e-4e93-a5c9-4b1cd5ab3e3e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="459b562a-4e77-41af-9138-c78b32fcf3fb"/>
+				</reportElement>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="15" width="90" height="15" uuid="55abc791-714b-4fe0-81c6-7c33852cff12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf200b2c-fd87-4dff-86b2-b8eb1e196de9"/>
+				</reportElement>
+				<text><![CDATA[hotline]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="15" width="100" height="15" uuid="787ce7a5-3262-431e-9acd-0015d21fe554">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe308e11-59be-412a-8b36-19fbfe8a08b2"/>
+				</reportElement>
+				<text><![CDATA[email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="100" height="30" uuid="662e15ee-1884-46e8-ae01-27815e610ce1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef776da5-c41b-4eeb-94e8-32678ff20470"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{marketplaceId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="4" width="100" height="30" uuid="5dd359c6-1ed0-41d9-8dde-2239810ef35c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f832108-3054-4ef4-9763-79ae1574a456"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{marketName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="4" width="100" height="30" uuid="d5f90485-6166-4d08-a017-0fddaba5f921">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="459b562a-4e77-41af-9138-c78b32fcf3fb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="5" width="70" height="30" uuid="a188f463-9ed7-4ef2-9820-c50b493571eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf200b2c-fd87-4dff-86b2-b8eb1e196de9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hotline}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="6" width="100" height="30" uuid="fc09006f-ccae-4983-bae3-34d01d5510fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe308e11-59be-412a-8b36-19fbfe8a08b2"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

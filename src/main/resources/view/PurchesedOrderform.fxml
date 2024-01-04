@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PurchesedOrderformController">
+   <children>
+      <Label layoutX="35.0" layoutY="26.0" prefHeight="74.0" prefWidth="277.0" text="Purchesed Orders" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView layoutX="34.0" layoutY="164.0" prefHeight="399.0" prefWidth="556.0">
+        <columns>
+          <TableColumn prefWidth="109.0" text="Shipment ID" />
+          <TableColumn prefWidth="129.0" text="Items ID" />
+            <TableColumn prefWidth="144.0" text="Qty" />
+            <TableColumn prefWidth="175.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <Label layoutX="633.0" layoutY="122.0" text="Purchesed Count:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="814.0" layoutY="125.0" text="00" textFill="#339034">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="633.0" layoutY="171.0" text="All Qty :">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="737.0" layoutY="174.0" text="00" textFill="#339034">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="633.0" layoutY="219.0" text="Most Purchesed Item :">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="222.0" prefHeight="17.0" prefWidth="76.0" text=".........." textFill="#339034">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

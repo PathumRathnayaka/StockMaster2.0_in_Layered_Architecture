@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemformController">
+   <children>
+      <Label layoutX="44.0" layoutY="44.0" text="Add Items" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtID" layoutX="200.0" layoutY="173.0" onKeyReleased="#txtIdOnKeyReleased" prefHeight="25.0" prefWidth="146.0" promptText="I001" />
+      <TextField fx:id="txtName" layoutX="377.0" layoutY="173.0" onKeyReleased="#txtNameOnKeyReleased" promptText="noodles" />
+      <Label layoutX="200.0" layoutY="151.0" text="ID" />
+      <Label layoutX="377.0" layoutY="151.0" text="Name" />
+      <TextField fx:id="txtPrice" layoutX="553.0" layoutY="173.0" onKeyReleased="#txtPriceOnKeyRelesed" promptText="0000.00" />
+      <TextField fx:id="txtCategory" layoutX="32.0" layoutY="232.0" onKeyReleased="#txtCategoryOnKeyReleased" prefHeight="25.0" prefWidth="146.0" promptText="meals" />
+      <TextField fx:id="txtDescription" layoutX="396.0" layoutY="232.0" onKeyReleased="#txtDescriptionOnKeyReleased" prefHeight="25.0" prefWidth="214.0" />
+      <Label layoutX="555.0" layoutY="151.0" text="Price" />
+      <Label layoutX="32.0" layoutY="208.0" text="Category" />
+      <Label layoutX="398.0" layoutY="208.0" text="Description" />
+      <TableView fx:id="tblItems" layoutX="33.0" layoutY="336.0" prefHeight="290.0" prefWidth="786.0">
+        <columns>
+          <TableColumn fx:id="clmnID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="clmnName" prefWidth="88.0" text="Name" />
+            <TableColumn fx:id="clmnPrice" prefWidth="78.0" text="Price" />
+            <TableColumn fx:id="clmnCategory" prefWidth="89.0" text="Category" />
+            <TableColumn fx:id="clmnExpiryDate" prefWidth="157.0" text="Expiry Date" />
+            <TableColumn fx:id="clmnDescription" minWidth="0.0" prefWidth="189.0" text="Description" />
+            <TableColumn fx:id="clmnQty" prefWidth="109.0" text="Qty" />
+        </columns>
+      </TableView>
+      <Label layoutX="201.0" layoutY="208.0" text="Expiry Date" />
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="33.0" layoutY="275.0" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #1ba722;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="131.0" layoutY="275.0" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #182939;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="226.0" layoutY="275.0" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #182939;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearch" layoutX="729.0" layoutY="50.0" onAction="#txtSearchOnAction" prefHeight="25.0" prefWidth="179.0" promptText="Search" />
+      <ImageView fitHeight="47.0" fitWidth="48.0" layoutX="894.0" layoutY="572.0">
+         <image>
+            <Image url="@../img/support.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="txtDate" layoutX="199.0" layoutY="232.0" />
+      <Label layoutX="38.0" layoutY="151.0" text="Supplier ID" />
+      <Label layoutX="737.0" layoutY="146.0" text="Qty">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplierID" layoutX="31.0" layoutY="171.0" />
+      <TextField fx:id="txtQty" layoutX="729.0" layoutY="173.0" />
+      <JFXButton fx:id="btnSearch" layoutX="890.0" layoutY="36.0" onAction="#btnSearchOnAction" prefHeight="47.0" prefWidth="38.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="32.0">
+               <image>
+                  <Image url="@../img/search.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

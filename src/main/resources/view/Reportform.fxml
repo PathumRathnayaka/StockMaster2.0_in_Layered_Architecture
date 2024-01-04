@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="633.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportformController">
+   <children>
+      <Label layoutX="60.0" layoutY="42.0" prefHeight="43.0" prefWidth="142.0" text="All Reports" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="60.0" layoutY="149.0" prefHeight="60.0" prefWidth="173.0" style="-fx-background-color: #182939; -fx-background-radius: 15;" text="Supplier" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="289.0" layoutY="149.0" prefHeight="60.0" prefWidth="173.0" style="-fx-background-color: #182939; -fx-background-radius: 15;" text="Items" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="533.0" layoutY="149.0" prefHeight="60.0" prefWidth="173.0" style="-fx-background-color: #182939; -fx-background-radius: 15;" text="MarketPlace" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="758.0" layoutY="149.0" prefHeight="60.0" prefWidth="173.0" style="-fx-background-color: #182939; -fx-background-radius: 15;" text="Expired Items" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

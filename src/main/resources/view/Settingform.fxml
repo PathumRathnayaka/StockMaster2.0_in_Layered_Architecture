@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="633.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingformController">
+   <children>
+      <Label layoutX="55.0" layoutY="64.0" prefHeight="51.0" prefWidth="159.0" text="Setting" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="55.0" layoutY="161.0" prefHeight="28.0" prefWidth="603.0" style="-fx-background-color: #182939;" text="Account setting" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="55.0" layoutY="200.0" prefHeight="28.0" prefWidth="603.0" style="-fx-background-color: #182939;" text="Key Setting" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="55.0" layoutY="241.0" prefHeight="28.0" prefWidth="603.0" style="-fx-background-color: #182939;" text="Premium" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

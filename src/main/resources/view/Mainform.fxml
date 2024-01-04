@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="671.0" prefWidth="1156.0" style="-fx-background-color: #182939;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainformController">
+   <children>
+      <VBox layoutY="125.0" prefHeight="545.0" prefWidth="201.0">
+         <children>
+            <Button fx:id="btnDashBoard" mnemonicParsing="false" onAction="#btnDashBoardOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: #182939;" text="DashBoard" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnSupplier" layoutX="10.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Supplier" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnItem" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Item" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnInventory" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Inventory" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnOrders" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Market Place" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnShipment" layoutX="10.0" layoutY="206.0" mnemonicParsing="false" onAction="#btnShipmentOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Shipment" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="10.0" layoutY="304.0" mnemonicParsing="false" onAction="#btnPurchesedOrderOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Purchers Orders" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnExpired" layoutX="10.0" layoutY="255.0" mnemonicParsing="false" onAction="#btnExpiredOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Expired Items" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="10.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnReportOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Report" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="10.0" layoutY="402.0" mnemonicParsing="false" onAction="#btnSettingOnAction" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Setting" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="10.0" layoutY="451.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: 182939;" text="Button" />
+         </children>
+      </VBox>
+      <AnchorPane fx:id="SubAnchorPane" layoutX="202.0" layoutY="45.0" prefHeight="626.0" prefWidth="956.0" style="-fx-background-color: #ffffff;" />
+      <ImageView fitHeight="118.0" fitWidth="189.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="99.0" fitWidth="134.0" layoutX="44.0" layoutY="14.0">
+         <image>
+            <Image url="@../img/m2i8H7A0b1b1N4d3.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblDate" layoutX="1043.0" layoutY="14.0" text="Date" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="926.0" layoutY="14.0" text="time" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

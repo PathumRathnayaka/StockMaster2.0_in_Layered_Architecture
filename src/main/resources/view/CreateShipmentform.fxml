@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateShipmentformController">
+   <children>
+      <Label layoutX="44.0" layoutY="44.0" text="Create Shipment" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="131.0" text="Shipment ID" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Label>
+      <Label fx:id="lblShipmentID" layoutX="36.0" layoutY="156.0" textFill="#1ba722">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="211.0" layoutY="131.0" text="Super Market ID" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbMarketID" layoutX="209.0" layoutY="150.0" onAction="#cmbMarketIdOnAction" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="388.0" layoutY="131.0" text="Market Name" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMarketName" layoutX="388.0" layoutY="156.0" />
+      <Label layoutX="527.0" layoutY="131.0" text="Address" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMarketAddress" layoutX="527.0" layoutY="156.0" />
+      <Label layoutX="694.0" layoutY="131.0" text="Date" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="695.0" layoutY="156.0" />
+      <Label layoutX="35.0" layoutY="192.0" text="Item ID" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbItem" layoutX="36.0" layoutY="215.0" onAction="#cmbItemIdOnAction" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="211.0" layoutY="192.0" text="Item Name" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="192.0" text="Unit Price" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="523.0" layoutY="192.0" text="Qty.On Hand" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="693.0" layoutY="192.0" text="Qty" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblItemName" layoutX="209.0" layoutY="219.0" />
+      <Label fx:id="lblUnitPrice" layoutX="384.0" layoutY="219.0" />
+      <Label fx:id="lblQtyOnHand" layoutX="527.0" layoutY="219.0" />
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="648.0" layoutY="267.0" onAction="#btnAddToCartOnAction" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #1ba722;" text=" Add to Cart" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../img/Creditcart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField fx:id="txtQty" layoutX="686.0" layoutY="215.0" prefHeight="31.0" prefWidth="103.0" />
+      <TableView fx:id="tblShipmenttable" layoutX="29.0" layoutY="318.0" prefHeight="255.0" prefWidth="851.0">
+        <columns>
+          <TableColumn fx:id="clmnItemID" prefWidth="91.0" text="Item ID" />
+          <TableColumn fx:id="clmnItemName" prefWidth="140.0" text="Item Name" />
+            <TableColumn fx:id="clmnMarketName" prefWidth="156.0" text="Market Name" />
+            <TableColumn fx:id="clmnUnitPrice" prefWidth="100.0" text="Unit Price" />
+            <TableColumn fx:id="clmnQty" prefWidth="102.0" text="Qty" />
+            <TableColumn fx:id="clmnTotal" prefWidth="136.0" text="Total" />
+            <TableColumn fx:id="clmnAction" prefWidth="125.0" text="Action" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnShipment" buttonType="RAISED" layoutX="788.0" layoutY="580.0" onAction="#btnShipmentOnAction" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #182939;" text="  Shipment" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../img/shipmentIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="35.0" layoutY="598.0" text="Net Total" textFill="#182939">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNetTotal" layoutX="119.0" layoutY="598.0" />
+   </children>
+</AnchorPane>
