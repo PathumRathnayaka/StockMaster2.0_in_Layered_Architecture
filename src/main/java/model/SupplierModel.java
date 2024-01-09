@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.SupplierDto;
 
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SupplierModel {
     public boolean SaveSupplier(SupplierDto supplierDto) throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
         String sql="INSERT INTO supplier VALUES(?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1,supplierDto.getSupplierID());
@@ -27,7 +27,7 @@ public class SupplierModel {
     }
 
     public List<SupplierDto> getAllSupplier() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM supplier";
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class SupplierModel {
     }
 
     public SupplierDto searchItem(String ItemID) throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
         String sql = "SELECT * FROM item WHERE ItemID = ?";
 
         PreparedStatement pstm = connection.prepareStatement(sql);

@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DbConnection {
-    private static DbConnection dbConnection;
+public class DBConnection {
+    private static DBConnection dbConnection;
     private Connection connection;
-    private DbConnection(){
+    private DBConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/stockmaster","root","1234");
@@ -16,8 +16,8 @@ public class DbConnection {
             e.printStackTrace();
         }
     }
-    public static DbConnection getInstance(){
-        return (dbConnection==null) ? dbConnection=new DbConnection() : dbConnection;
+    public static DBConnection getDbConnection(){
+        return (dbConnection==null) ? dbConnection=new DBConnection() : dbConnection;
 
     }
 

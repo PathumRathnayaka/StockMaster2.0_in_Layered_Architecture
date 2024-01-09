@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 
 import dto.MarketPlaceDto;
 
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MarketPlacemodel {
     public boolean SaveMarket(MarketPlaceDto marketPlaceDto) throws SQLException {
-        Connection connection= DbConnection.getInstance().getConnection();
+        Connection connection= DBConnection.getInstance().getConnection();
         String sql = "INSERT INTO marketplace VALUES(?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1,marketPlaceDto.getMarketPlaceId());
@@ -32,7 +32,7 @@ public class MarketPlacemodel {
 
 
 public MarketPlaceDto searchMarket(String id) throws SQLException {
-    Connection connection = DbConnection.getInstance().getConnection();
+    Connection connection = DBConnection.getInstance().getConnection();
     String sql = "SELECT * FROM marketplace WHERE marketplaceId = ?";
 
     PreparedStatement pstm = connection.prepareStatement(sql);
@@ -56,7 +56,7 @@ public MarketPlaceDto searchMarket(String id) throws SQLException {
 
 
     public List<MarketPlaceDto> getAllMarket() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM marketplace";
         PreparedStatement pstm = connection.prepareStatement(sql);

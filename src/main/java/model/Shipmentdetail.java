@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.tm.CartTm;
 
 import java.sql.Connection;
@@ -19,7 +19,7 @@ public class Shipmentdetail {
         return true;
     }
     private static boolean saveShipmentDetails(String shipmentID, CartTm tm) throws SQLException, SQLException, ClassNotFoundException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "INSERT INTO shipmentdetail VALUES(?, ?, ?, ?)";
         PreparedStatement pstm = connection.prepareStatement(sql);

@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Shipment {
 
     public static String generateNextShipmentId() throws SQLException, SQLException, ClassNotFoundException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "SELECT shipmentID FROM shipment ORDER BY shipmentID DESC LIMIT 1";
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -32,7 +32,7 @@ public class Shipment {
         }
     }
     public static boolean saveShipment(String shipmentID, String marketId, LocalDate date) throws SQLException, ClassNotFoundException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "INSERT INTO shipment VALUES(?, ?, ?)";
         PreparedStatement pstm = connection.prepareStatement(sql);

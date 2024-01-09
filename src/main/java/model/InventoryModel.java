@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.InventoryDto;
 
 import java.sql.Connection;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class InventoryModel {
     public boolean saveInventory(InventoryDto inventoryDto) throws SQLException {
-        Connection connection= DbConnection.getInstance().getConnection();
+        Connection connection= DBConnection.getInstance().getConnection();
         String sql = "INSERT INTO inventory VALUES(?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1,inventoryDto.getInventoryId());
@@ -28,7 +28,7 @@ public class InventoryModel {
     }
 
     public List<InventoryDto> getAllItem() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM inventory";
         PreparedStatement pstm = connection.prepareStatement(sql);

@@ -1,6 +1,6 @@
 package controller;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.MarketPlaceDto;
 import dto.tm.MarketPlaceTable;
 import javafx.collections.FXCollections;
@@ -140,7 +140,7 @@ public class MarketPlaceformController {
         JasperReport jasperReport = JasperCompileManager.compileReport(load);
         JasperPrint jasprePrint = JasperFillManager.fillReport(jasperReport,
                 null,
-                DbConnection.getInstance().getConnection()
+                DBConnection.getInstance().getConnection()
         );
         JasperViewer.viewReport(jasprePrint,false);
     }

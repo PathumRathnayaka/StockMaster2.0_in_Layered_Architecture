@@ -2,7 +2,7 @@ package controller;
 
 
 import com.jfoenix.controls.JFXButton;
-import db.DbConnection;
+import db.DBConnection;
 import dto.SupplierDto;
 import dto.tm.SupplierTable;
 import javafx.collections.FXCollections;
@@ -172,7 +172,7 @@ public class SupplierformController {
         JasperReport jasperReport = JasperCompileManager.compileReport(load);
         JasperPrint jasprePrint = JasperFillManager.fillReport(jasperReport,
                 null,
-                DbConnection.getInstance().getConnection()
+                DBConnection.getInstance().getConnection()
         );
         JasperViewer.viewReport(jasprePrint,false);
     }

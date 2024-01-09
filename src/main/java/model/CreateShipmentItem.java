@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.CreateShipmentDto;
 import dto.tm.CartTm;
 
@@ -13,7 +13,7 @@ public class CreateShipmentItem {
         Connection con = null;
         try{
 
-            con = DbConnection.getInstance().getConnection();
+            con = DBConnection.getInstance().getConnection();
             con.setAutoCommit(false);
             // set auto commit = false
             //1. order table

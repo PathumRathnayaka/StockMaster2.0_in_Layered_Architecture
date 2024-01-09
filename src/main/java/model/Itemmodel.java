@@ -1,6 +1,6 @@
 package model;
 
-import db.DbConnection;
+import db.DBConnection;
 import dto.ItemDto;
 
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import java.util.List;
 public class Itemmodel {
 
     public boolean SaveItems(ItemDto itemDto) throws SQLException {
-        Connection connection= DbConnection.getInstance().getConnection();
+        Connection connection= DBConnection.getInstance().getConnection();
         String sql = "INSERT INTO item VALUES(?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1,itemDto.getItemID());
@@ -31,7 +31,7 @@ public class Itemmodel {
     }
 
     public static List<ItemDto> getAllItem() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM item";
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -58,7 +58,7 @@ public class Itemmodel {
         return dtoList;
     }
     public ItemDto searchItem(String ItemID) throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
         String sql = "SELECT * FROM item WHERE ItemID = ?";
 
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -83,7 +83,7 @@ public class Itemmodel {
         return dto;
     }
     public static boolean updateQty(String itemID, int qty) throws SQLException, ClassNotFoundException {
-        Connection connection = DbConnection.getInstance().getConnection();
+        Connection connection = DBConnection.getInstance().getConnection();
 
         String sql = "UPDATE item SET qty = qty - ? WHERE itemID = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -94,7 +94,7 @@ public class Itemmodel {
         return pstm.executeUpdate() > 0;
     }
     void UpdateItems(){
-        Connection connection= DbConnection.getInstance().getConnection();
+        Connection connection= DBConnection.getInstance().getConnection();
     }
 
 
