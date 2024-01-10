@@ -24,7 +24,7 @@ public class MarketPlaceDAOImpl implements MarketPlaceDAO {
             );
             allMarketPlace.add(entity);
         }
-        return null;
+        return allMarketPlace;
     }
 
     @Override
