@@ -20,6 +20,10 @@ public class DBConnection {
         return (dbConnection==null) ? dbConnection=new DBConnection() : dbConnection;
 
     }
+    public static DBConnection getInstance(){
+        return (dbConnection==null) ? dbConnection=new DBConnection() : dbConnection;
+
+    }
 
     public Connection getConnection() {
         return connection;
