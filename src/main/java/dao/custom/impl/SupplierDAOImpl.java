@@ -19,7 +19,7 @@ public class SupplierDAOImpl implements SupplierDAO {
             Supplier entity = new Supplier(
                     rst.getString("supplierID"),
                     rst.getString("SupplierName"),
-                    rst.getString("invoiceNUmber"),
+                    rst.getString("invoiceNumber"),
                     rst.getDate("date").toLocalDate(),
                     rst.getInt("supplierContact")
                     );
@@ -29,23 +29,27 @@ public class SupplierDAOImpl implements SupplierDAO {
     }
 
     @Override
-    public boolean save(Supplier dto) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean save(Supplier entity) throws SQLException, ClassNotFoundException {
+        return SQLUtill.execute("INSERT INTO supplier (supplierID,suppierName, invoiceNumber,date,supplierContact) VALUES (?,?,?,?,?)",
+                entity.getSupplierID(),entity.getSupplierName(),entity.getInvoiceName(),entity.getDate(),entity.getSupplierContact());
     }
 
     @Override
-    public boolean update(Supplier dto) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean update(Supplier entity) throws SQLException, ClassNotFoundException {
+        return SQLUtill.execute("UPDATE supplier SET name=?, address=? WHERE id=?",
+                entity.getSupplierID(),entity.getSupplierName(),entity.getInvoiceName(),entity.getDate(),entity.getSupplierContact());
     }
 
     @Override
     public void delete(String id) throws SQLException, ClassNotFoundException {
-
+        SQLUtill.execute("DELETE FROM supplier WHERE id=?",id);
     }
 
     @Override
     public Supplier search(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        ResultSet rst = SQLUtill.execute("SELECT * FROM supplier WHERE id=?",id);
+        rst.next();
+        return new Supplier(id + "", rst.getString("supplierName"), rst.getString("invoiceNumber"), rst.getDate("date").toLocalDate(),rst.getInt("supplierContact"));
     }
 
 }
