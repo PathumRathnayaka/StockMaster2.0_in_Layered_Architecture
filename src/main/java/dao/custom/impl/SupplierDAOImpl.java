@@ -13,7 +13,7 @@ public class SupplierDAOImpl implements SupplierDAO {
     @Override
     public ArrayList<Supplier> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtill.execute("SELECT * FROM supplier");
-        ArrayList<Supplier> allCustomer = new ArrayList<>();
+        ArrayList<Supplier> allSupplier = new ArrayList<>();
 
         while (rst.next()) {
             Supplier entity = new Supplier(
@@ -23,9 +23,9 @@ public class SupplierDAOImpl implements SupplierDAO {
                     rst.getDate("date").toLocalDate(),
                     rst.getInt("supplierContact")
                     );
-            allCustomer.add(entity);
+            allSupplier.add(entity);
         }
-        return allCustomer;
+        return allSupplier;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 
     @Override
     public boolean update(Supplier entity) throws SQLException, ClassNotFoundException {
-        return SQLUtill.execute("UPDATE supplier SET name=?, address=? WHERE id=?",
+        return SQLUtill.execute("UPDATE supplier SET supplierName=?, invoiceNumber=?, date=?, supplierContact=? , WHERE id=?",
                 entity.getSupplierID(),entity.getSupplierName(),entity.getInvoiceName(),entity.getDate(),entity.getSupplierContact());
     }
 
