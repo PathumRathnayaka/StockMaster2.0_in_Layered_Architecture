@@ -40,6 +40,11 @@ public class ExpiredItemDAOImpl implements ExpiredItemDAO {
     }
 
     @Override
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
     public void delete(String id) throws SQLException, ClassNotFoundException {
 
     }

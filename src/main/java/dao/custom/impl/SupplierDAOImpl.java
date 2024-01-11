@@ -41,6 +41,12 @@ public class SupplierDAOImpl implements SupplierDAO {
     }
 
     @Override
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst=SQLUtill.execute("SELECT id FROM supplier WHERE id=?",id);
+        return rst.next();
+    }
+
+    @Override
     public void delete(String id) throws SQLException, ClassNotFoundException {
         SQLUtill.execute("DELETE FROM supplier WHERE id=?",id);
     }

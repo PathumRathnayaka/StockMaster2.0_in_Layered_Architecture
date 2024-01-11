@@ -43,6 +43,11 @@ public class InventoryDAOImpl implements InventoryDAO {
     }
 
     @Override
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
     public void delete(String id) throws SQLException, ClassNotFoundException {
         SQLUtill.execute("DELETE FROM inventory WHERE id=?",id);
     }

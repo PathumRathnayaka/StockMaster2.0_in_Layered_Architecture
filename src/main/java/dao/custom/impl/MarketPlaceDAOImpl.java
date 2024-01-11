@@ -40,6 +40,11 @@ public class MarketPlaceDAOImpl implements MarketPlaceDAO {
     }
 
     @Override
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
     public void delete(String id) throws SQLException, ClassNotFoundException {
         SQLUtill.execute("DELETE FROM marketplace WHERE id=?",id);
     }
