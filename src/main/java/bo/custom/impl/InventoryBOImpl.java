@@ -5,6 +5,7 @@ import dao.DAOFactory;
 import dao.custom.InventoryDAO;
 import dto.InventoryDto;
 import entity.Inventory;
+//import entity.Item;
 
 
 import java.sql.SQLException;
@@ -24,22 +25,22 @@ public class InventoryBOImpl implements InventoryBO {
 
     @Override
     public boolean saveInventory(InventoryDto dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return inventoryDAO.save(new Inventory(dto.getInventoryId(),dto.getItemID(),dto.getGodownID(),dto.getTrackID(),dto.getInvoiceNumber(),dto.getQuantity(),dto.getDate()));
     }
 
     @Override
     public boolean updateInventory(InventoryDto dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return inventoryDAO.update(new Inventory(dto.getInventoryId(),dto.getItemID(),dto.getGodownID(),dto.getTrackID(),dto.getInvoiceNumber(),dto.getQuantity(),dto.getDate()));
     }
 
     @Override
     public boolean existInventory(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        return inventoryDAO.exist(id);
     }
 
     @Override
     public void deleteInventory(String id) throws SQLException, ClassNotFoundException {
-
+        inventoryDAO.delete(id);
     }
 
     @Override
