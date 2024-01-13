@@ -12,5 +12,5 @@ public class MarketPlaceDto {
     private String marketName;
     private String address;
     private int hotline;
-    private String emai;
+    private String email;
 }
