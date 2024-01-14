@@ -30,7 +30,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 
     @Override
     public boolean save(Supplier entity) throws SQLException, ClassNotFoundException {
-        return SQLUtill.execute("INSERT INTO supplier (supplierID,suppierName, invoiceNumber,date,supplierContact) VALUES (?,?,?,?,?)",
+        return SQLUtill.execute("INSERT INTO supplier (supplierID,supplierName, invoiceNumber,date,supplierContact) VALUES (?,?,?,?,?)",
                 entity.getSupplierID(),entity.getSupplierName(),entity.getInvoiceName(),entity.getDate(),entity.getSupplierContact());
     }
 

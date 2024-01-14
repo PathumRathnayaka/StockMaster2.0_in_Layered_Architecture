@@ -109,7 +109,7 @@ public class MarketPlaceformController {
                                 dto.getMarketName(),
                                 dto.getAddress(),
                                 dto.getHotline(),
-                                dto.getEmai()
+                                dto.getEmail()
                         )
                 );
             }

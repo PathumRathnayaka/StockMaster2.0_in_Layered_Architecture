@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ExpiredItemDAOImpl implements ExpiredItemDAO {
     @Override
-    public ArrayList<ExpiredItemDAO> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<ExpiredItem> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtill.execute("SELECT * FROM inventory");
         ArrayList<ExpiredItem> allExpiredItem = new ArrayList<>();
 
@@ -26,18 +26,20 @@ public class ExpiredItemDAOImpl implements ExpiredItemDAO {
             );
             allExpiredItem.add(entity);
         }
-        return null;
+        return allExpiredItem;
     }
 
     @Override
-    public boolean save(ExpiredItemDAO dto) throws SQLException, ClassNotFoundException {
+    public boolean save(ExpiredItem dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean update(ExpiredItemDAO dto) throws SQLException, ClassNotFoundException {
+    public boolean update(ExpiredItem dto) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+
 
     @Override
     public boolean exist(String id) throws SQLException, ClassNotFoundException {
@@ -50,7 +52,7 @@ public class ExpiredItemDAOImpl implements ExpiredItemDAO {
     }
 
     @Override
-    public ExpiredItemDAO search(String id) throws SQLException, ClassNotFoundException {
+    public ExpiredItem search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 }

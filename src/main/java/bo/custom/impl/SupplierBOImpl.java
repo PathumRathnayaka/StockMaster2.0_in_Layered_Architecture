@@ -3,7 +3,6 @@ package bo.custom.impl;
 import bo.custom.SupplierBO;
 import dao.DAOFactory;
 import dao.SQLUtill;
-import dao.SupperDAO;
 import dao.custom.SupplierDAO;
 import dto.SupplierDto;
 import entity.Supplier;

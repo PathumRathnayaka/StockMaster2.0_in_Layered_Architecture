@@ -1,6 +1,8 @@
 package controller;
 
 
+import bo.custom.SupplierBO;
+import bo.custom.impl.SupplierBOImpl;
 import com.jfoenix.controls.JFXButton;
 import db.DBConnection;
 import dto.SupplierDto;
@@ -24,6 +26,7 @@ import util.TextFields;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.LocalDate.parse;
@@ -76,6 +79,8 @@ public class SupplierformController {
     private SupplierModel supplierModel=new SupplierModel();
     private SupplierDto supplierDto= new SupplierDto();
 
+    SupplierBO supplierBO = new SupplierBOImpl();
+
     public void initialize(){
         setCellValueFactory();
         loadAllSupplier();
@@ -88,7 +93,7 @@ public class SupplierformController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String supplierID=txtSupplierID.getText();
+        /*String supplierID=txtSupplierID.getText();
         String supplierName=txtSupplierName.getText();
         String invoiceName=txtInvoiceName.getText();
         LocalDate date=txtDate.getValue();
@@ -105,9 +110,92 @@ public class SupplierformController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }*/
+        String supplierID=txtSupplierID.getText();
+        String supplierName=txtSupplierName.getText();
+        String invoiceName=txtInvoiceName.getText();
+        LocalDate date=txtDate.getValue();
+        int supplierContact= Integer.parseInt(txtSupplierContact.getText());
+
+        if (!supplierName.matches("[A-Za-z ]+")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
+            txtSupplierName.requestFocus();
+            return;
+        } else if (!invoiceName.matches(".{3,}")) {
+            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
+            txtInvoiceName.requestFocus();
+            return;
+        }
+
+        if (btnSave.getText().equalsIgnoreCase("save")) {
+            /*Save Customer*/
+            try {
+                if (existSupplier(supplierID)) {
+                    new Alert(Alert.AlertType.ERROR, supplierID + " already exists").show();
+                }
+                boolean isSaved = supplierBO.saveSupplier(new SupplierDto(supplierID,supplierName, invoiceName, date, supplierContact));
+
+                if (isSaved) {
+                    tblSupplier.getItems().add(new SupplierTable(supplierID,supplierName, invoiceName, date, supplierContact));
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Failed to save the supplier " + e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+    }
+        } else {
+            /*Update customer*/
+            try {
+                if (!existSupplier(supplierID)) {
+                    new Alert(Alert.AlertType.ERROR, "There is no such supplier associated with the id " + supplierID).show();
+                }
+                SupplierDto dto = new SupplierDto(supplierID,supplierName, invoiceName, date, supplierContact);
+                supplierBO.updateSupplier(dto);
+
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Failed to update the customer " + supplierID + e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            SupplierTable selectedSupplier = tblSupplier.getSelectionModel().getSelectedItem();
+            selectedSupplier.setSupplierID(supplierID);
+            selectedSupplier.setSupplierName(supplierName);
+            selectedSupplier.setInvoiceNum(invoiceName);
+            selectedSupplier.setDate(date);
+            selectedSupplier.setSupplierContact(supplierContact);
+            //selectedSupplier.refresh();
+        }
+
+        //btnAddNewCustomer.fire();
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+        /*Delete Customer*/
+        String id = tblSupplier.getSelectionModel().getSelectedItem().getSupplierID();
+        try {
+            if (!existSupplier(id)) {
+                new Alert(Alert.AlertType.ERROR, "There is no such supplier associated with the id " + id).show();
+            }
+            supplierBO.deleteSupplier(id);
+            tblSupplier.getItems().remove(tblSupplier.getSelectionModel().getSelectedItem());
+            tblSupplier.getSelectionModel().clearSelection();
+            //initUI();
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to delete the supplier " + id).show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
-    private void loadAllSupplier() {
+
+
+    boolean existSupplier(String id) throws SQLException, ClassNotFoundException {
+                return supplierBO.existSupplier(id);
+
+            }
+
+    /*private void loadAllSupplier() {
         var model = new SupplierModel();
 
         ObservableList<SupplierTable> obList = FXCollections.observableArrayList();
@@ -131,7 +219,31 @@ public class SupplierformController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }*/
+    private void loadAllSupplier() {
+        tblSupplier.getItems().clear();
+        /*Get all customers*/
+        try {
+            ArrayList<SupplierDto> allCustomer = supplierBO.getAllSupplier();
+            for (SupplierDto dto:allCustomer) {
+                tblSupplier.getItems().add(
+                        new SupplierTable(
+                                dto.getSupplierID(),
+                                dto.getSupplierName(),
+                                dto.getInvoiceName(),
+                                dto.getDate(),
+                                dto.getSupplierContact()));
+
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+
+
     }
+
     private void setCellValueFactory() {
         clmnID.setCellValueFactory(new PropertyValueFactory<>("SupplierID"));
         clmnSupplierName.setCellValueFactory(new PropertyValueFactory<>("SupplierName"));

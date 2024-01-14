@@ -21,7 +21,7 @@ public class MarketPlacemodel {
         preparedStatement.setString(2, marketPlaceDto.getMarketName());
         preparedStatement.setString(3, marketPlaceDto.getAddress());
         preparedStatement.setString(4, String.valueOf(marketPlaceDto.getHotline()));
-        preparedStatement.setString(5, marketPlaceDto.getEmai());
+        preparedStatement.setString(5, marketPlaceDto.getEmail());
 
 
 

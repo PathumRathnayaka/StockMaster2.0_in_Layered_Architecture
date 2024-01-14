@@ -5,7 +5,7 @@ import dao.custom.impl.InventoryDAOImpl;
 import dao.custom.impl.ItemDAOImpl;
 import dao.custom.impl.SupplierDAOImpl;
 
-public class DAOFactory {
+public class    DAOFactory {
     private static DAOFactory daoFactory;
     public DAOFactory(){}
     public static DAOFactory getDaoFactory(){
